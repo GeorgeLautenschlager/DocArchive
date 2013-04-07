@@ -1,4 +1,13 @@
 DocArchive::Application.routes.draw do
+
+  root :to => 'documents#index'
+
+  resources :documents
+
+  match 'digitize' => 'rows#create'
+  resources :rows
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

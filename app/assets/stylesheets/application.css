@@ -11,3 +11,16 @@
  *= require_self
  *= require_tree .
  */
+
+.scroll-pane
+{
+	width: 100%;
+	height: 200px;
+	overflow: auto;
+}
+
+#results-table
+{	
+	width: 50%;
+	overflow: auto;
+}
