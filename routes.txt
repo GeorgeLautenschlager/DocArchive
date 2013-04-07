@@ -1,0 +1,8 @@
+         root        /                             document#index
+    documents GET    /documents(.:format)          documents#index
+              POST   /documents(.:format)          documents#create
+ new_document GET    /documents/new(.:format)      documents#new
+edit_document GET    /documents/:id/edit(.:format) documents#edit
+     document GET    /documents/:id(.:format)      documents#show
+              PUT    /documents/:id(.:format)      documents#update
+              DELETE /documents/:id(.:format)      documents#destroy

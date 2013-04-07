@@ -1,0 +1,93 @@
+<%= form_for(@row) do |f| %>
+  <% if @row.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@row.errors.count, "error") %> prohibited this row from being saved:</h2>
+
+      <ul>
+      <% @row.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :document_id %><br />
+    <%= f.number_field :document_id %>
+  </div>
+  <div class="field">
+    <%= f.label :page %><br />
+    <%= f.number_field :page %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.text_field :date %>
+  </div>
+  <div class="field">
+    <%= f.label :certificate %><br />
+    <%= f.number_field :certificate %>
+  </div>
+  <div class="field">
+    <%= f.label :child_name %><br />
+    <%= f.text_field :child_name %>
+  </div>
+  <div class="field">
+    <%= f.label :display_age %><br />
+    <%= f.text_field :display_age %>
+  </div>
+  <div class="field">
+    <%= f.label :sex %><br />
+    <%= f.text_field :sex %>
+  </div>
+  <div class="field">
+    <%= f.label :display_nation %><br />
+    <%= f.text_field :display_nation %>
+  </div>
+  <div class="field">
+    <%= f.label :marks %><br />
+    <%= f.text_field :marks %>
+  </div>
+  <div class="field">
+    <%= f.label :residing_with_name %><br />
+    <%= f.text_field :residing_with_name %>
+  </div>
+  <div class="field">
+    <%= f.label :parents_name_res %><br />
+    <%= f.text_field :parents_name_res %>
+  </div>
+  <div class="field">
+    <%= f.label :bringer_name_res %><br />
+    <%= f.text_field :bringer_name_res %>
+  </div>
+  <div class="field">
+    <%= f.label :purpose_brought %><br />
+    <%= f.text_field :purpose_brought %>
+  </div>
+  <div class="field">
+    <%= f.label :signatures %><br />
+    <%= f.text_field :signatures %>
+  </div>
+  <div class="field">
+    <%= f.label :school %><br />
+    <%= f.text_field :school %>
+  </div>
+  <div class="field">
+    <%= f.label :outcome %><br />
+    <%= f.text_field :outcome %>
+  </div>
+  <div class="field">
+    <%= f.label :comments %><br />
+    <%= f.text_field :comments %>
+  </div>
+  <div class="field">
+    <%= f.label :search_age %><br />
+    <%= f.text_field :search_age %>
+  </div>
+  <div class="field">
+    <%= f.label :search_nation %><br />
+    <%= f.text_field :search_nation %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

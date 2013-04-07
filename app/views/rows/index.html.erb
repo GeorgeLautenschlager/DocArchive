@@ -1,0 +1,59 @@
+<h1>Listing rows</h1>
+
+<table>
+  <tr>
+    <th>Document</th>
+    <th>Page</th>
+    <th>Date</th>
+    <th>Certificate</th>
+    <th>Child name</th>
+    <th>Display age</th>
+    <th>Sex</th>
+    <th>Display nation</th>
+    <th>Marks</th>
+    <th>Residing with name</th>
+    <th>Parents name res</th>
+    <th>Bringer name res</th>
+    <th>Purpose brought</th>
+    <th>Signatures</th>
+    <th>School</th>
+    <th>Outcome</th>
+    <th>Comments</th>
+    <th>Search age</th>
+    <th>Search nation</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @rows.each do |row| %>
+  <tr>
+    <td><%= row.document_id %></td>
+    <td><%= row.page %></td>
+    <td><%= row.date %></td>
+    <td><%= row.certificate %></td>
+    <td><%= row.child_name %></td>
+    <td><%= row.display_age %></td>
+    <td><%= row.sex %></td>
+    <td><%= row.display_nation %></td>
+    <td><%= row.marks %></td>
+    <td><%= row.residing_with_name %></td>
+    <td><%= row.parents_name_res %></td>
+    <td><%= row.bringer_name_res %></td>
+    <td><%= row.purpose_brought %></td>
+    <td><%= row.signatures %></td>
+    <td><%= row.school %></td>
+    <td><%= row.outcome %></td>
+    <td><%= row.comments %></td>
+    <td><%= row.search_age %></td>
+    <td><%= row.search_nation %></td>
+    <td><%= link_to 'Show', row %></td>
+    <td><%= link_to 'Edit', edit_row_path(row) %></td>
+    <td><%= link_to 'Destroy', row, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Row', new_row_path %>

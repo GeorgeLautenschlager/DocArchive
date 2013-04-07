@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  document_id: 1
+  page: 1
+  date: MyString
+  certificate: 1
+  child_name: MyString
+  display_age: MyString
+  sex: MyString
+  display_nation: MyString
+  marks: MyString
+  residing_with_name: MyString
+  parents_name_res: MyString
+  bringer_name_res: MyString
+  purpose_brought: MyString
+  signatures: MyString
+  school: MyString
+  outcome: MyString
+  comments: MyString
+  search_age: MyString
+  search_nation: MyString
+
+two:
+  document_id: 1
+  page: 1
+  date: MyString
+  certificate: 1
+  child_name: MyString
+  display_age: MyString
+  sex: MyString
+  display_nation: MyString
+  marks: MyString
+  residing_with_name: MyString
+  parents_name_res: MyString
+  bringer_name_res: MyString
+  purpose_brought: MyString
+  signatures: MyString
+  school: MyString
+  outcome: MyString
+  comments: MyString
+  search_age: MyString
+  search_nation: MyString
