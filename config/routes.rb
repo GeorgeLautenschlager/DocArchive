@@ -5,6 +5,7 @@ DocArchive::Application.routes.draw do
   resources :documents
 
   match 'digitize' => 'rows#create'
+  match 'documents/:id/search/' => 'documents#search', :as => :document_search
   resources :rows
 
 
