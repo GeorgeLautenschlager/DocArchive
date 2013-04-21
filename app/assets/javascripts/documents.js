@@ -3,5 +3,5 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready(
-	$('.scroll-pane').jScrollPane({showArrows: true});
+	$('.scroll-pane').jScrollPane({showArrows: true});	
 )
