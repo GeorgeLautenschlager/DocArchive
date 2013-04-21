@@ -12,16 +12,120 @@
  *= require_tree .
  */
 
+/*Scroll Pane*/
 .scroll-pane
 {
 	width: 1000px;
-	height: 600px;
+	height: 300px;
 	overflow: auto;
-
 }
 
 #results-table
 {	
 	width: 50%;
 	overflow: auto;
+	border: 5px solid #7a7;
+}
+
+
+
+/*Table Styling*/
+#results-table {
+  font: 100% sans-serif;
+  background-color: #efe;
+  border-collapse: collapse;
+  empty-cells: show;
+  border: 1px solid #7a7;
+}
+ 
+#results-table > caption {
+  text-align: left;
+  font-weight: bold;
+  font-size: 200%;
+  border-bottom: .2em solid #4ca;
+  margin-bottom: .5em;
+}
+ 
+ 
+/* basic shared rules */
+#results-table th,
+#results-table td {
+  text-align: right;
+  padding-right: .5em;
+  border: 1px solid #7a7;
+}
+ 
+#results-table th {
+  font-weight: bold;
+  padding-left: .5em;
+}
+ 
+ 
+/* header */
+#results-table > thead > tr:first-child > th {
+  text-align: center;
+  color: blue;
+}
+ 
+#results-table > thead > tr + tr > th {
+  font-style: italic;
+  color: gray;
+}
+ 
+/* fix size of superscript */
+#results-table sup {
+  font-size: 75%;
+}
+ 
+/* body */
+#results-table td {
+  background-color: #cef;
+  padding:.5em .5em .5em 3em;
+}
+ 
+/* footer */
+#results-table tfoot {
+  font-weight: bold;
+}
+ 
+#results-table tfoot th {
+  color: blue;
+}
+ 
+#results-table tfoot th:after {
+  content: ":";
+}
+ 
+#results-table > tfoot td {
+  background-color: #cee;
+}
+ 
+#results-table > tfoot > tr:first-child td {
+  border-top: .2em solid #7a7;
+}
+
+/*Layout*/
+
+#search-options-div {
+position: absolute;
+width: 200px;
+left: 20px;
+padding-right:0;
+margin:0;
+}
+
+body {
+  background-color: #e1ddd9;
+  font-size: 13px;
+  font-family: Arial, SunSans-Regular, Sans-Serif;
+  color:#564b47;  
+  padding: 20px;
+  margin:0;
+}
+
+.scroll-pane {
+  margin-left: 200px;
+  background-color:#fff;
+  overflow: auto;
+  padding: 20px;
 }

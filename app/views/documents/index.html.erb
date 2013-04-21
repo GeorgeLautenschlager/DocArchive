@@ -1,6 +1,6 @@
 <h1><%= @document.description %></h1>
 
-<div id='search-options-div' >
+<div id='search-options-div'>
   <h2>
     Search Option
   <h2>
@@ -67,108 +67,111 @@
 
   <table id='results-table'>
   	<tr class='headings-row'>
-  		<th>
-  			Page #
-  		</th>
-  		<th>
-  			Date
-  		</th>
-  		<th>
-  			Number of Certificate
-  		</th>
-  		<th>
-  			Every Name of Alien Child
-  		</th>
-  		<th>
-  			Age
-  		</th>
-  		<th>
-  			Sex
-  		</th>
-  		<th>
-  			Nation
-  		</th>
-  		<th>
-  			Any Particular Marks
-  		</th>
-  		<th>
-  			With Whom Residing
-  		</th>
-  		<th>
-  			Name and Residence of Parents
-  		</th>
-  		<th>
-  			Name and Residence of Persons Bringing such Child
-  		</th>
-  		<th>
-  			For what Purpose Brought
-  		</th>
-  		<th>
-  			Signature of Parties
-  		</th>
-  		<th>
-  			School
-  		</th>
-  		<th>
-  			"Removal, Departure, or Death"
-  		</th>
-  		<th>
-  			Extra Comments
-  		</th>
+  		
+      <th>
+        Page #
+      </th>
+      <th>
+        Date
+      </th>
+      <th>
+        Number of Certificate
+      </th>
+      <th>
+        Every Name of Alien Child
+      </th>
+      <th>
+        Age
+      </th>
+      <th>
+        Sex
+      </th>
+      <th>
+        Nation
+      </th>
+      <th>
+        Any Particular Marks
+      </th>
+      <th>
+        With Whom Residing
+      </th>
+      <th>
+        Name and Residence of Parents
+      </th>
+      <th>
+        Name and Residence of Persons Bringing such Child
+      </th>
+      <th>
+        For what Purpose Brought
+      </th>
+      <th>
+        Signature of Parties
+      </th>
+      <th>
+        School
+      </th>
+      <th>
+        "Removal, Departure, or Death"
+      </th>
+      <th>
+        Extra Comments
+      </th>
+
   	</tr>
 
-  	<% for row in @rows %>
-  		<tr>
-	  		<td>
-	  			<%= row.page %>
-	  		</td>
-	  		<td>
-	  			<%= row.date %>
-	  		</td>
-	  		<td>
-	  			<%= row.certificate %>
-	  		</td>
-	  		<td>
-	  			<%= row.child_name %>
-	  		</td>
-	  		<td>
-	  			<%= row.display_age %>
-	  		</td>
-	  		<td>
-	  			<%= row.sex %>
-	  		</td>
-	  		<td>
-	  			<%= row.display_nation %>
-	  		</td>
-	  		<td>
-	  			<%= row.marks %>
-	  		</td>
-	  		<td>
-	  			<%= row.residing_with_name %>
-	  		</td>
-	  		<tr>
-	  			<%= row.parents_name_res %>
-	  		</td>
-	  		<td>
-	  			<%= row.bringer_name_res %>
-	  		</td>
-	  		<td>
-	  			<%= row.purpose_brought %>
-	  		</td>
-	  		<tr>
-	  			<%= row.signatures %>
-	  		</td>
-	  		<td>
-	  			<%= row.school %>
-	  		</td>
-	  		<td>
-	  			<%= row.outcome %>
-	  		</td>
-	  		<td>
-	  			<%= row.comments %>
-	  		</td>
-  		</tr>
-  	<% end %>
+
+		<% for row in @rows %>
+      <tr>
+        <td>
+          <%= row.page %>
+        </td>
+
+        <td>
+          <%= row.date %>
+        </td>
+
+        <td>
+          <%= row.certificate %>
+        </td>
+        <td>
+          <%= row.child_name %>
+        </td>
+        <td>
+          <%= row.display_age %>
+        </td>
+        <td>
+          <%= row.sex %>
+        </td>
+        <td>
+          <%= row.display_nation %>
+        </td>
+        <td>
+          <%= row.marks %>
+        </td>
+        <td>
+          <%= row.residing_with_name %>
+        </td>
+        <td>
+          <%= row.bringer_name_res %>
+        </td>
+        <td>
+          <%= row.purpose_brought %>
+        </td>
+        <td>
+          <%= row.signatures %>
+        </td>
+        <td>
+          <%= row.school %>
+        </td>
+        <td>
+          <%= row.outcome %>
+        </td>
+        <td>
+          <%= row.comments %>
+        </td>
+
+      </tr>
+    <% end %>
 
   </table>
 </div>
