@@ -80,10 +80,12 @@ class DocumentsController < ApplicationController
   def search
     @document = Document.first
 
-    @rows = []
-    @rows << @document.rows.first
-    @rows << @document.rows.second
     # binding.pry
+
+    @rows = Row.where(sex: params[:sex], search_age: params[:age], search_nation: params[:nation])
+      
+    # binding.pry
+
     render "index"
   end
 end
