@@ -39,7 +39,7 @@
         <%= label_tag(:nation, "4) Nation") %>
       </td>
       <td>
-        <%= select_tag(:nation, options_for_select([["Mandingo", "Mandingo"], ["Temrie", "Temrie"], ["etc.", "etc."]])) %>
+        <%= select_tag(:nation, options_for_select([["Sarakole", "Sarakole"], ["Bullom", "Bullom"], ["Niger Delta, Igbo", "Niger Delta, Igbo"], ["Igbo", "Igbo"], ["Limba", "Limba"], ["Mende", "Mende"], ["Cossoo", "Cossoo"], ["Vai", "Vai"], ["Bassa", "Kru"], ["Liberian", "Liberian"], ["Baga", "Baga"], ["Fulbe", "Fulbe"], ["Interior of Gallinas or Gola", "Interior of Gallinas or Gola"], ["Sherbro", "Sherbro"], ["Loko", "Loko"], ["Koranko", "Koranko"], ["Susu", "Susu"], ["Mande", "Mande"], ["Temne", "Temne"]])) %>
       </td>
     </tr>
 
@@ -127,47 +127,47 @@
         </td>
 
         <td>
-          <%= row.date %>
+          <%= row.date.encode('UTF-8') %>
         </td>
 
         <td>
           <%= row.certificate %>
         </td>
         <td>
-          <%= row.child_name %>
+          <%= row.child_name.encode('UTF-8') %>
         </td>
         <td>
-          <%= row.display_age %>
+          <%= row.display_age.encode('UTF-8') %>
         </td>
         <td>
-          <%= row.sex %>
+          <%= row.sex.encode('UTF-8') %>
         </td>
         <td>
-          <%= row.display_nation %>
+          <%= row.display_nation.encode('UTF-8') %>
         </td>
         <td>
-          <%= row.marks %>
+          <%= row.marks.encode('UTF-8') %>
         </td>
         <td>
-          <%= row.residing_with_name %>
+          <%= row.residing_with_name.encode('UTF-8') %>
         </td>
         <td>
-          <%= row.bringer_name_res %>
+          <%= row.bringer_name_res.encode('UTF-8') %>
         </td>
         <td>
-          <%= row.purpose_brought %>
+          <%= row.purpose_brought.encode('UTF-8') %>
         </td>
         <td>
-          <%= row.signatures %>
+          <%= row.signatures.encode('UTF-8') %>
         </td>
         <td>
-          <%= row.school %>
+          <%= row.school.encode('UTF-8') %>
         </td>
         <td>
-          <%= row.outcome %>
+          <%= row.outcome.encode('UTF-8') %>
         </td>
         <td>
-          <%= row.comments %>
+          <%= row.comments.encode('UTF-8') %>
         </td>
 
       </tr>

@@ -78,6 +78,12 @@ class DocumentsController < ApplicationController
   end
 
   def search
-    binding.pry
+    @document = Document.first
+
+    @rows = []
+    @rows << @document.rows.first
+    @rows << @document.rows.second
+    # binding.pry
+    render "index"
   end
 end
