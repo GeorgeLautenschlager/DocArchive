@@ -12,7 +12,7 @@
         <%= label_tag(:sex, "1) Sex") %>
       </td>
       <td>
-        <%= select_tag(:sex, options_for_select([["Male", "Boy"], ["Female", "Girl"], ["Any", "Any"]])) %>
+        <%= select_tag(:sex, options_for_select([["Any", "Any"], ["Male", "Boy"], ["Female", "Girl"]])) %>
       </td>
     </tr>
 
@@ -21,7 +21,7 @@
         <%= label_tag(:age, "2) Age") %>
       </td>
       <td>
-        <%= select_tag(:age, options_for_select([["0-5", "0-5"], ["6-10", "6-10"], ["11-15", "11-15"], ["16-20", "16-20"], ["Any", "Any"]])) %>
+        <%= select_tag(:age, options_for_select([["Any", "Any"], ["0-5", "0-5"], ["6-10", "6-10"], ["11-15", "11-15"], ["16-20", "16-20"]])) %>
       </td>
     </tr>
 
@@ -30,7 +30,7 @@
         <%= label_tag(:outcome, "3) Status") %>
       </td>
       <td>
-        <%= select_tag(:outcome, options_for_select([["Removed", "Removed"], ["No Comment Made", "No Comment Made"], ["Died", "Died"], ["Transferred", "Transferred"], ["Absconded", "Absconded"], ["Assigned New School", "Assigned New School"], ["Any", "Any"]])) %>
+        <%= select_tag(:outcome, options_for_select([["Any", "Any"], ["Removed", "Removed"], ["No Comment Made", "No Comment Made"], ["Died", "Died"], ["Transferred", "Transferred"], ["Absconded", "Absconded"], ["Assigned New School", "Assigned New School"]])) %>
       </td>
     </tr>
 
@@ -39,7 +39,7 @@
         <%= label_tag(:nation, "4) Nation") %>
       </td>
       <td>
-        <%= select_tag(:nation, options_for_select([["Sarakole", "Sarakole"], ["Bullom", "Bullom"], ["Niger Delta, Igbo", "Niger Delta, Igbo"], ["Igbo", "Igbo"], ["Limba", "Limba"], ["Mende", "Mende"], ["Cossoo", "Cossoo"], ["Vai", "Vai"], ["Bassa", "Kru"], ["Liberian", "Liberian"], ["Baga", "Baga"], ["Fulbe", "Fulbe"], ["Interior of Gallinas or Gola", "Interior of Gallinas or Gola"], ["Sherbro", "Sherbro"], ["Loko", "Loko"], ["Koranko", "Koranko"], ["Susu", "Susu"], ["Mande", "Mande"], ["Temne", "Temne"], ["Any", "Any"]])) %>
+        <%= select_tag(:nation, options_for_select([["Any", "Any"], ["Sarakole", "Sarakole"], ["Bullom", "Bullom"], ["Niger Delta, Igbo", "Niger Delta, Igbo"], ["Igbo", "Igbo"], ["Limba", "Limba"], ["Mende", "Mende"], ["Cossoo", "Cossoo"], ["Vai", "Vai"], ["Bassa", "Kru"], ["Liberian", "Liberian"], ["Baga", "Baga"], ["Fulbe", "Fulbe"], ["Interior of Gallinas or Gola", "Interior of Gallinas or Gola"], ["Sherbro", "Sherbro"], ["Loko", "Loko"], ["Koranko", "Koranko"], ["Susu", "Susu"], ["Mande", "Mande"], ["Temne", "Temne"]])) %>
       </td>
     </tr>
 
@@ -48,7 +48,7 @@
         <%= label_tag(:purpose_brought, "5) Reason for being in Freetown") %>
       </td>
       <td>
-        <%= select_tag(:purpose_brought, options_for_select([["For a Visit", "For a Visit"], ["To be Educated", "To be Educated"], ["Domestic Servants", "Domestic Servants"], ["Learn a Trade", "Learn a Trade"], ["Blank", "Blank"], ["Any", "Any"]])) %>
+        <%= select_tag(:purpose_brought, options_for_select([["Any", "Any"], ["For a Visit", "For a Visit"], ["To be Educated", "To be Educated"], ["Domestic Servants", "Domestic Servants"], ["Learn a Trade", "Learn a Trade"], ["Blank", "Blank"]])) %>
       </td>
     </tr>
 
@@ -56,6 +56,8 @@
 
     <p>
       <%= submit_tag("Search") %>
+
+      <%= link_to 'Reset', documents_path()%>
   <% end %>
 
 </div>
