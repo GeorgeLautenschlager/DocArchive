@@ -82,7 +82,42 @@ class DocumentsController < ApplicationController
 
     # binding.pry
 
-    @rows = Row.where(sex: params[:sex], search_age: params[:age], search_nation: params[:nation])
+    @rows = @document.rows
+
+    # Sex filter
+    if params[:sex] == "Any"
+      # No filter
+    else
+      @rows = @rows.where(sex: params[:sex])
+    end
+
+    # Age filter
+    if params[:age] == "Any"
+      # No filter
+    else
+      @rows = @rows.where(search_age: params[:age])
+    end
+
+    # Status filter
+    if params[:outcome] == "Any"
+      # No filter
+    else
+      @rows = @rows.where(search_outcome: params[:outcome])
+    end
+
+    # Nation filter
+    if params[:nation] == "Any"
+      # No filter
+    else
+      @rows = @rows.where(search_nation: params[:nation])
+    end
+
+    # Reason for Being in Freetown filter
+    if params[:purpose_brought] == "Any"
+      # No filter
+    else
+      @rows = @rows.where(search_reason: params[:purpose_brought])
+    end
       
     # binding.pry
 
