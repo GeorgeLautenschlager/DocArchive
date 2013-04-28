@@ -61,7 +61,7 @@
   <% end %>
 
   <div class='stats-div'>
-    <%= "Percentage: #{number_with_precision(((@rows.length / @document.rows.length) * 100), precision: 2)}" %>
+    <%= "Percentage: #{number_with_precision(((@rows.length.to_d / @document.rows.length.to_d) * 100).to_d, precision: 2)}" %>
     <br>
     <%= "Sum: #{@rows.length}" %>
   </div>
