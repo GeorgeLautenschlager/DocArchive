@@ -10,6 +10,10 @@
     <tr>
       <td>
         <%= label_tag(:sex, "1) Sex") %>
+        <p>
+          <ul id='sex-term-list'>
+
+          </ul>
       </td>
       <td>
         <%= select_tag(:sex, options_for_select([["Any", "Any"], ["Male", "Boy"], ["Female", "Girl"]])) %>
@@ -202,3 +206,12 @@
 </div>
 
 *Built by George + Shoshawnah Lautenschlager
+
+<button id="test">Test </button>
+<button id="test2">Test2 </button>
+
+<script>
+  $("button#test").click(function () {
+    alert("test")
+  });
+</script>

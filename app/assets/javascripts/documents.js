@@ -1,3 +1,3 @@
-$(document).ready(
-	$('.scroll-pane').jScrollPane({showArrows: true});	
-)
+$("button#test2").click(function () {
+  alert("test")
+});
