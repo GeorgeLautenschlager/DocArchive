@@ -3,7 +3,7 @@ class DocumentsController < ApplicationController
   # GET /documents.json
   def index
     @document = Document.first
-    @rows = @document.rows
+    @rows = @document.rows if @document
   end
 
   # GET /documents/1
