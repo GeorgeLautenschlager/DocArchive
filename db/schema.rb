@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130424010237) do
+ActiveRecord::Schema.define(:version => 20130428015909) do
 
   create_table "documents", :force => true do |t|
     t.string   "name"
@@ -37,11 +37,11 @@ ActiveRecord::Schema.define(:version => 20130424010237) do
     t.string   "signatures"
     t.string   "school"
     t.string   "outcome"
-    t.string   "comments"
+    t.text     "comments",           :limit => 255
     t.string   "search_age"
     t.string   "search_nation"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
     t.string   "search_reason"
     t.string   "search_outcome"
   end
