@@ -48,7 +48,7 @@
         <%= label_tag(:purpose_brought, "5) Reason for being in Freetown") %>
       </td>
       <td>
-        <%= select_tag(:purpose_brought, options_for_select([["Any", "Any"], ["For a Visit", "For a Visit"], ["To be Educated", "To be Educated"], ["Domestic Servants", "Domestic Servants"], ["Learn a Trade", "Learn a Trade"], ["Blank", "Blank"]])) %>
+        <%= select_tag(:purpose_brought, options_for_select([["Any", "Any"], ["For a Visit", "For a Visit"], ["To be Educated", "To be Educated"], ["Domestic Servant", "Domestic Servant"], ["Learn a Trade", "Learn a Trade"], ["Slavery Related", "Slavery Related"], ["Blank", "Blank"]])) %>
       </td>
     </tr>
 
@@ -59,6 +59,12 @@
 
       <%= link_to 'Reset', documents_path()%>
   <% end %>
+
+  <div class='stats-div'>
+    <%= "Percentage: #{number_with_precision(((@rows.length.to_d / @document.rows.length.to_d) * 100).to_d, precision: 2)}" %>
+    <br>
+    <%= "Sum: #{@rows.length}" %>
+  </div>
 
 </div>
  
