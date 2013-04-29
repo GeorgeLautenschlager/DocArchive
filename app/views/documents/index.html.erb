@@ -3,66 +3,52 @@
 <div id='search-options-div'>
   <h2>
     Search Option
-  <h2>
+  </h2>
+  <p>
+    <%= label_tag(:sex, "1) Sex") %>
+    <br>
+    <%= select_tag(:sex, options_for_select([["All", "All"], ["Boy", "Boy"], ["Girl", "Girl"]]), ) %>
+    <button id="add-sex-term"> Add </button>
 
-  <%= form_tag(document_search_path(@document.id), :method => "get") do %>
-  <table>
-    <tr>
-      <td>
-        <%= label_tag(:sex, "1) Sex") %>
-        <p>
-          <ul id='sex-term-list'>
+  <p>
+    <%= label_tag(:age, "2) Age") %>
+    <br>
+    <%= select_tag(:age, options_for_select([["All", "All"], ["0-5", "0-5"], ["6-10", "6-10"], ["11-15", "11-15"], ["16-20", "16-20"]])) %>
+    <button id="add-age-term"> Add </button>
+    <br>
 
-          </ul>
-      </td>
-      <td>
-        <%= select_tag(:sex, options_for_select([["Any", "Any"], ["Male", "Boy"], ["Female", "Girl"]])) %>
-      </td>
-    </tr>
+  <p>
+    <%= label_tag(:outcome, "3) Status") %>
+    <br>
+    <%= select_tag(:outcome, options_for_select([["All", "All"], ["Removed", "Removed"], ["No Comment Made", "No Comment Made"], ["Died", "Died"], ["Transferred", "Transferred"], ["Absconded", "Absconded"], ["Assigned New School", "Assigned New School"]])) %>
+    <button id="add-outcome-term"> Add </button>
 
-    <tr>
-      <td>
-        <%= label_tag(:age, "2) Age") %>
-      </td>
-      <td>
-        <%= select_tag(:age, options_for_select([["Any", "Any"], ["0-5", "0-5"], ["6-10", "6-10"], ["11-15", "11-15"], ["16-20", "16-20"]])) %>
-      </td>
-    </tr>
+  <p>
+    <%= label_tag(:nation, "4) Nation") %>
+    <br>
+    <%= select_tag(:nation, options_for_select([["All", "All"], ["Sarakole", "Sarakole"], ["Bullom", "Bullom"], ["Niger Delta, Igbo", "Niger Delta, Igbo"], ["Igbo", "Igbo"], ["Limba", "Limba"], ["Mende", "Mende"], ["Cossoo", "Cossoo"], ["Vai", "Vai"], ["Bassa", "Kru"], ["Liberian", "Liberian"], ["Baga", "Baga"], ["Fulbe", "Fulbe"], ["Interior of Gallinas or Gola", "Interior of Gallinas or Gola"], ["Sherbro", "Sherbro"], ["Loko", "Loko"], ["Koranko", "Koranko"], ["Susu", "Susu"], ["Mande", "Mande"], ["Temne", "Temne"]])) %>
+    <button id="add-nation-term"> Add </button>
 
-    <tr>
-      <td>
-        <%= label_tag(:outcome, "3) Status") %>
-      </td>
-      <td>
-        <%= select_tag(:outcome, options_for_select([["Any", "Any"], ["Removed", "Removed"], ["No Comment Made", "No Comment Made"], ["Died", "Died"], ["Transferred", "Transferred"], ["Absconded", "Absconded"], ["Assigned New School", "Assigned New School"]])) %>
-      </td>
-    </tr>
+  <p>
+    <%= label_tag(:reason, "5) Reason for being in Freetown") %>
+    <br>
+    <%= select_tag(:reason, options_for_select([["All", "All"], ["For a Visit", "For a Visit"], ["To be Educated", "To be Educated"], ["Domestic Servant", "Domestic Servant"], ["Learn a Trade", "Learn a Trade"], ["Slavery Related", "Slavery Related"], ["Blank", "Blank"]])) %>
+    <button id="add-reason-term"> Add </button>
 
-    <tr>
-      <td>
-        <%= label_tag(:nation, "4) Nation") %>
-      </td>
-      <td>
-        <%= select_tag(:nation, options_for_select([["Any", "Any"], ["Sarakole", "Sarakole"], ["Bullom", "Bullom"], ["Niger Delta, Igbo", "Niger Delta, Igbo"], ["Igbo", "Igbo"], ["Limba", "Limba"], ["Mende", "Mende"], ["Cossoo", "Cossoo"], ["Vai", "Vai"], ["Bassa", "Kru"], ["Liberian", "Liberian"], ["Baga", "Baga"], ["Fulbe", "Fulbe"], ["Interior of Gallinas or Gola", "Interior of Gallinas or Gola"], ["Sherbro", "Sherbro"], ["Loko", "Loko"], ["Koranko", "Koranko"], ["Susu", "Susu"], ["Mande", "Mande"], ["Temne", "Temne"]])) %>
-      </td>
-    </tr>
+  <div>
+    <%= form_tag(document_search_path(@document.id), :method => "get") do %>
+      <b>Search Terms<b>
 
-    <tr>
-      <td>
-        <%= label_tag(:purpose_brought, "5) Reason for being in Freetown") %>
-      </td>
-      <td>
-        <%= select_tag(:purpose_brought, options_for_select([["Any", "Any"], ["For a Visit", "For a Visit"], ["To be Educated", "To be Educated"], ["Domestic Servant", "Domestic Servant"], ["Learn a Trade", "Learn a Trade"], ["Slavery Related", "Slavery Related"], ["Blank", "Blank"]])) %>
-      </td>
-    </tr>
+      <ul id= "search-term-list">
+        
+      </ul>
 
-  </table>
+      <br>
 
-    <p>
       <%= submit_tag("Search") %>
-
       <%= link_to 'Reset', documents_path()%>
-  <% end %>
+    <% end %>
+  </div>
 
   <div class='stats-div'>
     <%= "Percentage: #{number_with_precision((((@rows.length * 1.0) / (@document.rows.length * 1.0)) * 100), precision: 2)}" %>
@@ -207,11 +193,47 @@
 
 *Built by George + Shoshawnah Lautenschlager
 
-<button id="test">Test </button>
-<button id="test2">Test2 </button>
+<button id="test" hidden="true">Test </button>
+<button id="test2" hidden="true">Test2 </button>
 
 <script>
   $("button#test").click(function () {
     alert("test")
   });
+
+  $("button#add-sex-term").click(function (event) {
+    var term = $("select#sex").val()
+
+    $("ul#search-term-list").append("<li>" + term + "<input hidden=true name=\"sex[]\" " + "value=" + "\"" + term + "\" " + ">" + "</li>")
+    event.preventDefault()
+  });
+
+  $("button#add-age-term").click(function (event) {
+    var term = $("select#age").val()
+
+    $("ul#search-term-list").append("<li>" + term + "<input hidden=true name=\"age[]\" " + "value=" + "\"" + term + "\" " + ">" + "</li>")
+    event.preventDefault()
+  });
+
+  $("button#add-nation-term").click(function (event) {
+    var term = $("select#nation").val()
+
+    $("ul#search-term-list").append("<li>" + term + "<input hidden=true name=\"nation[]\" " + "value=" + "\"" + term + "\" " + ">" + "</li>")
+    event.preventDefault()
+  });
+
+  $("button#add-outcome-term").click(function (event) {
+    var term = $("select#outcome").val()
+    $("ul#search-term-list").append("<li>" + term + "<input hidden=true name=\"outcome[]\" " + "value=" + "\"" + term + "\" " + ">" + "</li>")
+    event.preventDefault()
+  });
+
+  $("button#add-reason-term").click(function (event) {
+    var term = $("select#reason").val()
+
+    $("ul#search-term-list").append("<li>" + term + "<input hidden=true name=\"reason[]\" " + "value=" + "\"" + term + "\" " + ">" + "</li>")
+    event.preventDefault()
+  });
 </script>
+
+<input name="test" type="hidden" value="This is a test">

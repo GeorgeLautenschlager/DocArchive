@@ -1,3 +1,4 @@
-$("button#test2").click(function () {
+$("button#test2").click(function (event) {
   alert("test")
+  event.preventDefault()
 });

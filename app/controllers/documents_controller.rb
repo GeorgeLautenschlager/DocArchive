@@ -80,46 +80,125 @@ class DocumentsController < ApplicationController
   def search
     @document = Document.first
 
-    # binding.pry
+    filter = nil
 
     @rows = @document.rows
 
     # Sex filter
-    if params[:sex] == "Any"
-      # No filter
+    if params[:sex]
+      filter = []
+
+      for term in params[:sex]
+        term_result = []
+
+        for row in @rows 
+          if row.sex == term
+            term_result << row
+          end
+        end
+
+        filter = filter + term_result
+      end
+
+      @rows = filter
+      filter = []
+
     else
-      @rows = @rows.where(sex: params[:sex])
+      # no filtering
     end
 
-    # Age filter
-    if params[:age] == "Any"
-      # No filter
+    # age filter
+    if params[:age]
+      filter = []
+
+      for term in params[:age]
+        term_result = []
+
+        for row in @rows 
+          if row.search_age == term
+            term_result << row
+          end
+        end
+
+        filter = filter + term_result
+      end
+
+      @rows = filter
+      filter = []
+
     else
-      @rows = @rows.where(search_age: params[:age])
+      # no filtering
     end
 
-    # Status filter
-    if params[:outcome] == "Any"
-      # No filter
+    # nation filter
+    if params[:nation]
+      filter = []
+
+      for term in params[:nation]
+        term_result = []
+
+        for row in @rows 
+          if row.search_nation == term
+            term_result << row
+          end
+        end
+
+        filter = filter + term_result
+      end
+
+      @rows = filter
+      filter = []
+
     else
-      @rows = @rows.where(search_outcome: params[:outcome])
+      # no filtering
     end
 
-    # Nation filter
-    if params[:nation] == "Any"
-      # No filter
+    # outcome filter
+    if params[:outcome]
+      filter = []
+
+      for term in params[:outcome]
+        term_result = []
+
+        for row in @rows 
+          if row.search_outcome == term
+            term_result << row
+          end
+        end
+
+        filter = filter + term_result
+      end
+
+      @rows = filter
+      filter = []
+
     else
-      @rows = @rows.where(search_nation: params[:nation])
+      # no filtering
     end
 
-    # Reason for Being in Freetown filter
-    if params[:purpose_brought] == "Any"
-      # No filter
+    # age filter
+    if params[:reason]
+      filter = []
+
+      for term in params[:reason]
+        term_result = []
+
+        for row in @rows 
+          if row.search_reason == term
+            term_result << row
+          end
+        end
+
+        filter = filter + term_result
+      end
+
+      @rows = filter
+      filter = []
+
     else
-      @rows = @rows.where(search_reason: params[:purpose_brought])
+      # no filtering
     end
-      
-    # binding.pry
+    
 
     render "index"
   end
