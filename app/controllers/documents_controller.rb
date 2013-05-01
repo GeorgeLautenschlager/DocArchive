@@ -89,16 +89,12 @@ class DocumentsController < ApplicationController
 
     @sex_search_terms = @age_search_terms = @nation_search_terms = @outcome_search_terms = @reason_search_terms = []
 
-    binding.pry
-
     @sex_search_terms = params[:sex] if params[:sex]
     @age_search_terms = params[:age] if params[:age]
     @nation_search_terms = params[:nation] if params[:nation]
     @outcome_search_terms = params[:outcome] if params[:outcome]
     @reason_search_terms = params[:reason] if params[:reason]
     filter = nil
-
-    binding.pry
 
     @rows = @document.rows
 
