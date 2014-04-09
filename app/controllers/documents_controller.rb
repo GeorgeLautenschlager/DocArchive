@@ -3,7 +3,11 @@ class DocumentsController < ApplicationController
   # GET /documents.json
   def index
     @document = Document.first
-    @rows = @document.rows if @document
+
+    if @document 
+      @rows = @document.rows
+      @rows = @rows.sort_by{|r| r.page}
+    end
   end
 
   # GET /documents/1
@@ -198,8 +202,9 @@ class DocumentsController < ApplicationController
     else
       # no filtering
     end
-    
 
+    @rows = @rows.sort_by{|r| r.page}
+    
     render "index"
   end
 end
