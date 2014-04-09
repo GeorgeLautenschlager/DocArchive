@@ -8,8 +8,6 @@ class DocumentsController < ApplicationController
       @rows = @document.rows
       @rows = @rows.sort_by{|r| r.page}
     end
-    
-    @rows = @document.rows if @document
 
     @sex_search_terms = []
     @age_search_terms = []
