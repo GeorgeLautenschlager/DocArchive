@@ -8,6 +8,14 @@ class DocumentsController < ApplicationController
       @rows = @document.rows
       @rows = @rows.sort_by{|r| r.page}
     end
+    
+    @rows = @document.rows if @document
+
+    @sex_search_terms = []
+    @age_search_terms = []
+    @nation_search_terms = []
+    @outcome_search_terms = [] 
+    @reason_search_terms = []
   end
 
   # GET /documents/1
@@ -82,8 +90,16 @@ class DocumentsController < ApplicationController
   end
 
   def search
+    
     @document = Document.first
 
+    @sex_search_terms = @age_search_terms = @nation_search_terms = @outcome_search_terms = @reason_search_terms = []
+
+    @sex_search_terms = params[:sex] if params[:sex]
+    @age_search_terms = params[:age] if params[:age]
+    @nation_search_terms = params[:nation] if params[:nation]
+    @outcome_search_terms = params[:outcome] if params[:outcome]
+    @reason_search_terms = params[:reason] if params[:reason]
     filter = nil
 
     @rows = @document.rows

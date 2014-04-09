@@ -36,11 +36,46 @@
     <button id="add-reason-term"> Add </button>
 
   <div>
-    <%= form_tag(document_search_path(@document.id), :method => "get") do %>
+    <%= form_tag(document_search_path(@document.id), :method => "post") do %>
       <b>Search Terms<b>
 
       <ul id= "search-term-list">
-        
+
+        <% for term in @sex_search_terms %> 
+          <li> 
+            <%= term.to_s %> 
+            <input hidden="true" name="sex[]" value=<%= "#{term}" %>>
+          </li>
+        <% end %>
+
+        <% for term in @age_search_terms %>
+          <li> 
+            <%= term.to_s %> 
+            <input hidden="true" name="age[]" value=<%= "#{term}" %>>
+          </li>
+        <% end %>
+
+        <% for term in @nation_search_terms %>
+          <li> 
+            <%= term.to_s %>
+            <input hidden="true" name="nation[]" value=<%= "#{term}" %>>
+          </li>
+        <% end %>
+
+        <% for term in @outcome_search_terms %>
+          <li> 
+            <%= term.to_s %>
+            <input hidden="true" name="outcome[]" value=<%= "#{term}" %>>
+          </li>
+        <% end %>
+
+        <% for term in @reason_search_terms %>
+          <li> 
+            <%= term.to_s %>
+            <input hidden="true" name="reason[]" value=<%= "#{term}" %>>
+          </li>
+        <% end %>
+
       </ul>
 
       <br>
@@ -205,6 +240,7 @@
     var term = $("select#sex").val()
 
     $("ul#search-term-list").append("<li>" + term + "<input hidden=true name=\"sex[]\" " + "value=" + "\"" + term + "\" " + ">" + "</li>")
+
     event.preventDefault()
   });
 
@@ -212,6 +248,7 @@
     var term = $("select#age").val()
 
     $("ul#search-term-list").append("<li>" + term + "<input hidden=true name=\"age[]\" " + "value=" + "\"" + term + "\" " + ">" + "</li>")
+
     event.preventDefault()
   });
 
@@ -219,12 +256,14 @@
     var term = $("select#nation").val()
 
     $("ul#search-term-list").append("<li>" + term + "<input hidden=true name=\"nation[]\" " + "value=" + "\"" + term + "\" " + ">" + "</li>")
+
     event.preventDefault()
   });
 
   $("button#add-outcome-term").click(function (event) {
     var term = $("select#outcome").val()
     $("ul#search-term-list").append("<li>" + term + "<input hidden=true name=\"outcome[]\" " + "value=" + "\"" + term + "\" " + ">" + "</li>")
+
     event.preventDefault()
   });
 
@@ -232,6 +271,7 @@
     var term = $("select#reason").val()
 
     $("ul#search-term-list").append("<li>" + term + "<input hidden=true name=\"reason[]\" " + "value=" + "\"" + term + "\" " + ">" + "</li>")
+
     event.preventDefault()
   });
 </script>
